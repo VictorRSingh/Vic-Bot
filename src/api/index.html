@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script type="text/javascript">
+
+            async function generateImage() {
+
+                var prompt = document.getElementById("prompt").value;
+
+                const encodedParams = new URLSearchParams();
+                encodedParams.append("prompt", "panda");
+ 
+                const options = {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/x-www-form-urlencoded',
+                        'X-RapidAPI-Key': 'sk-4b0AKiPGnYGU1TlC9aV6ELF50CN7JaP6K9dqPEsPoPNlxLoR',
+                        'X-RapidAPI-Host': 'dezgo.p.rapidapi.com'
+                    },
+                    body: encodedParams
+                };
+
+                var response = await fetch('https://dezgo.p.rapidapi.com/text2image', options)
+                var pngBlob = await response.blob();    
+                
+                console.log("Got the image as a blob:", pngBlob)
+
+                document.getElementById("my-image").src = URL.createObjectURL(pngBlob);
+            }
+
+        </script>
+    </head>
+    <body>
+        <input type="text" id="prompt" /> <button onclick="generateImage()">Generate</button>
+        <hr>
+        <img id="my-image" />
+    </body>
+</html>
