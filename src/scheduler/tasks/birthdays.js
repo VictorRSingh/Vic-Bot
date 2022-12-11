@@ -33,7 +33,7 @@ module.exports = {
             })
         }
         
-        console.log(chalk.blue(`${this.name} `) + chalk.green(` task running`));
+        console.log(chalk.blue(`${this.name} `) + chalk.green(` task running`))
         
     }
 }
