@@ -55,9 +55,9 @@ client.handleEvents();
 client.handleCommands();
 client.handleComponents();
 
-
 client.login(token);
+
 
 app.get('/api/', (req, res) => {
     res.sendFile(path.join(__dirname, '/api/index.html'));
-})
+});

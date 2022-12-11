@@ -14,26 +14,25 @@ module.exports = {
         // │ │ │ │ │ │
         // * * * * * *
 
-        console.log('test');
         var birthdays = [
-            {name: 'test', day: '09', month: '12'},
+            {name: 'Charlie', day: '09', month: '01'},
+            {name: 'Brandon', day: '06', month: '03'},
+            {name: 'Brendan', day: '24', month: '03'},
+            {name: 'Ayman', day: '03', month: '04'},
+            {name: 'Victor', day: '13', month: '07'},
+            {name: 'Travis', day: '14', month: '09'},
+            {name: 'Aaron', day: '06', month: '11'},
             {name: 'Tammie', day: '10', month: '12'}
         ]
         
         for(const birthday in birthdays) {
-            cron.schedule(`35 23 ${birthdays[birthday].day} ${birthdays[birthday].month} *`, () => {
-                console.log(`Happy birthday ${birthdays[birthday].name}`);
-                console.log(client);
-                client.channels.cache.fetch('1033239111412219946').then(channel => {
-                    channel.send('Testing');
-                })
+            const channel = client.channels.cache.get('1033239111412219946');
+            cron.schedule(`59 59 23 ${birthdays[birthday].day} ${birthdays[birthday].month} *`, () => {
+                channel.send(`Happy birthday ${birthdays[birthday].name}`);
             }, {
                 scheduled: true, 
                 timezone: "Canada/Eastern"
             })
-        }
-        
-        console.log(chalk.blue(`${this.name} `) + chalk.green(` task running`))
-        
+        }        
     }
 }
