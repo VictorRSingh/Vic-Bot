@@ -14,6 +14,7 @@ module.exports = {
         // │ │ │ │ │ │
         // * * * * * *
 
+        console.log('test');
         var birthdays = [
             {name: 'test', day: '09', month: '12'},
             {name: 'Tammie', day: '10', month: '12'}
