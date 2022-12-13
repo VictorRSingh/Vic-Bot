@@ -39,12 +39,6 @@ module.exports = {
 
     try {
         try {
-            var user;
-            function setUser(user, value) {
-                user = value;
-            }
-
-            var collection = 'AiGenerated';
             var response = await axios.request(options)
                 .then(function (response) {
                     return response;
