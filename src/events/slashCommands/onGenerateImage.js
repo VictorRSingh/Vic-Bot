@@ -2,8 +2,6 @@ const chalk = require("chalk");
 const axios = require("axios");
 const fs = require("fs");
 const { EmbedBuilder } = require("@discordjs/builders");
-const { json } = require("express");
-const e = require("express");
 const MongoClient = require("mongodb").MongoClient;
 
 module.exports = {
