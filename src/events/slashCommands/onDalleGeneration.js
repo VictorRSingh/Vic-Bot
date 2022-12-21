@@ -17,7 +17,7 @@ module.exports = {
           image_url = response.data.data[0].url;     
         try {
 
-            await interaction.followUp(`${image_url}`)     
+            await interaction.followUp(`${response.prompt}\n${image_url}`)     
             console.log(chalk.green(`Event '${this.name}' executed successfully`));
         } catch (error) {
             console.error(chalk.red(`ERROR: [${error}]`));
