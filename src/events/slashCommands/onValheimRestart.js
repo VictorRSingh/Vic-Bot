@@ -1,12 +1,12 @@
-const { EmbedBuilder, AttachmentBuilder } = require("discord.js");
-const chalk = require("chalk");
+const Client = require('ssh2').Client;
+const chalk = require('chalk')
 
 module.exports = {
   name: "onValheimRestart",
   async execute(interaction, client) {
     console.log(chalk.yellow(`Executing event '${this.name}'`));
 
-    await interaction.reply(
+    await interaction.followUp(
       "Restarting Valheim Server, _Updates will post here_"
     );
 
@@ -18,10 +18,11 @@ module.exports = {
       "Starting server.. you will be notified when you can connect",
       "World loaded, you can now connect!",
     ];
-    conn
-      .on("ready", function () {
-        console.log("Connected to Raspberry Pi, running script");
-        conn.shell((err, stream) => {
+    
+    try {
+        await conn.on("ready", async function () {
+        //console.log("Connected to Raspberry Pi, running script");
+        await conn.shell(async (err, stream) => {
           if (err) throw err;
           stream.on("data", async (data) => {
             //console.log(data.toString());
@@ -34,11 +35,8 @@ module.exports = {
               }
             }
           });
-          stream.end(
+          await stream.end(
             "sudo sh /home/pi/valheim/scripts/valheim_restart.sh\nexit\n"
-          );
-          console.log(
-            chalk.green(`Event '${this.name}' executed successfully`)
           );
         });
       })
@@ -48,16 +46,9 @@ module.exports = {
         username: "pi",
         password: "raspberry",
       });
-    try {
-      let d = new Date();
-      await interaction.followUp(
-        {
-          content: `[${d.toLocaleString()}]\nWorld loaded, you can now connect!`,
-        },
-        console.log(chalk.green(`Event '${this.name}' executed successfully`))
-      );
     } catch (error) {
-      console.error(chalk.red(`ERROR: [${error}]`));
+        console.error(chalk.red(`ERROR: [${error}]`));
     }
+    console.log(chalk.green(`Event '${this.name}' executed successfully`))
   },
 };
