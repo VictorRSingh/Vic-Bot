@@ -17,7 +17,11 @@ module.exports = {
         ];
 
         function toFahrenheit(temperatureInC) {
-            return ((temperatureInC * 9/5) + 32);
+            return Math.floor((temperatureInC * 9/5) + 32);
+        }
+
+        function toCelcius(temperature) {
+            return Math.floor(temperature);
         }
 
         var temps = '';
@@ -34,9 +38,9 @@ module.exports = {
                 const condition = await $('.CurrentConditions--phraseValue--mZC_p').html();
                 const feelsLike = await $('.TodayDetailsCard--feelsLikeTempValue--2icPt').html().slice(0, -1);
                 if(locations[location].key === 'Toronto') {
-                    temps += await (`**${locations[location].key}**: _Currently_ **${temperature}°C**, **${toFahrenheit(temperature)}°F**, _Feels like_ **${feelsLike}°C, ${toFahrenheit(feelsLike)}°F** : ${condition}\n`);
+                    temps += await (`**${locations[location].key}**: _Currently_ **${toCelcius(temperature)}°C**, **${toFahrenheit(temperature)}°F**, _Feels like_ **${toCelcius(feelsLike)}°C, ${toFahrenheit(feelsLike)}°F** : ${condition}\n`);
                 } else {
-                    temps += await (`**${locations[location].key}**: _Currently_ **${toFahrenheit(temperature)}°F**, **${temperature}°C**, _Feels like_ **${toFahrenheit(feelsLike)}°F, ${feelsLike}°C** : ${condition}\n`);
+                    temps += await (`**${locations[location].key}**: _Currently_ **${toFahrenheit(temperature)}°F**, **${toCelcius(temperature)}°C**, _Feels like_ **${toFahrenheit(feelsLike)}°F, ${toCelcius(feelsLike)}°C** : ${condition}\n`);
                 }
             })
             .catch((error) => {
