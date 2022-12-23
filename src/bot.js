@@ -58,6 +58,7 @@ client.handleComponents();
 
 client.login(token);
 
+console.log(__dirname);
 
 app.get('/api/', (req, res) => {
     res.sendFile(path.join(__dirname, '/api/index.html'));
