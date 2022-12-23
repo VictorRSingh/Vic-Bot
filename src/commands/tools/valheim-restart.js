@@ -24,7 +24,8 @@ module.exports = {
           //console.log(data.toString());
           for(const string in triggers) {
             if (data.toString().includes(triggers[string])) {
-              await interaction.editReply(triggers[string]);
+              let d = new Date();
+              await interaction.editReply(`[${d.toLocaleString()}]\n${triggers[string]}`);
             }
           }
 
