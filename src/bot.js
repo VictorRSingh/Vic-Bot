@@ -4,6 +4,7 @@ dotenv.config();
 const express = require('express')
 const path = require("path");
 const app = express();
+const { exec } = require('child_process');
 
 app.use(express.json());
 
@@ -39,7 +40,17 @@ client.color = 0x18e1ee;
     await connect(databaseToken).catch(console.error);
 
     app.listen(8080);
-    console.log(chalk.green('Listening on port 8080'));
+    console.log(chalk.green('API is listening on port 8080'));
+
+    exec('npm run dev', { cwd: './src/website', stdio: 'inherit' }, (error, stdout, stderr) => {
+        if (error) {
+            console.log(error);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+        console.error(`stderr: ${stderr}`);
+    });
+    console.log(chalk.green('API listening on port 3000'));
 })();
 
 const functionFolder = fs.readdirSync('./src/functions');
