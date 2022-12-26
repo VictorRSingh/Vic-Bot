@@ -48,6 +48,10 @@ module.exports = {
           }
         }
       });
+    } else if (message.content.includes("@here") || message.content.includes("@everyone") || message.type == "REPLY") return false;
+
+    if (message.mentions.has(client.user.id)) {
+      client.emit('onVicBotMention', message, client);
     }
   },
 };
