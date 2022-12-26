@@ -10,6 +10,7 @@
     "bin2png": "^0.2.4",
     "chalk": "^4.1.2",
     "cheerio": "^1.0.0-rc.12",
+    "child_process": "^1.0.2",
     "deepai": "^1.0.21",
     "discord-api-types": "^0.37.14",
     "discord.js": "^14.6.1-dev.1666613093-68d5712.0",
