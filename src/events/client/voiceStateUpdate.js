@@ -5,14 +5,16 @@ const {
 } = require("@discordjs/voice");
 const Transcriber = require("discord-speech-to-text");
 const transcriber = new Transcriber("NIP2FPLVXCH4TEM7HV6A3AX3OLCOUDPN");
+const chalk = require("chalk");
 
 module.exports = {
   name: "voiceStateUpdate",
+  once: true,
   connection: null,
   async execute(oldState, newState, client) {
-
+    console.log(chalk.yellow(`Executing event '${this.name}'`));
     if (newState) {
-        console.log('new');
+        //console.log('new');
       if (newState.member.id != client.user.id) {
         if (newState.channel) {
           connection = joinVoiceChannel({
@@ -33,7 +35,7 @@ module.exports = {
                     console.log(`${user.username}: ${text}`);
         
                     if(text) {
-                        if (text.includes("Remedy")) {
+                        if (text.toLowerCase().includes("remedy")) {
                            // console.log("Hey There Im Remdy");
                             //await newState.channel.send({content: text});
                             await client.emit('onVicBotVoice', newState.channel, text, client);
@@ -41,7 +43,7 @@ module.exports = {
                     }
                   });
                 } catch (error) {
-                    console.log(error);
+                  console.error(chalk.red(`ERROR: [${error}]`));
                 }
 
             });
@@ -59,5 +61,6 @@ module.exports = {
             }
         }
     }
+    console.log(chalk.green(`Event '${this.name}' executed successfully`));
   },
 };

@@ -63,7 +63,7 @@ module.exports = {
         formatted = formatted.replace("AI: ", "");
       }
       if (formatted != "") {
-        channel.send(formatted);
+        channel.send({content: formatted, tts: true});
       }
 
       //console.log(formatted.trimStart())

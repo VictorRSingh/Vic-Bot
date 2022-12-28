@@ -58,7 +58,7 @@ const functionFolder = fs.readdirSync('./src/functions');
 
 for(const folder of functionFolder)
 {
-    const functionFiles = fs.readdirSync(`./src/functions/${folder}`)
+    const functionFiles = fs.readdirSync(path.join(__dirname,`/functions/${folder}`))
     .filter((file) => file.endsWith(".js"));
     for (const file of functionFiles) require(`./functions/${folder}/${file}`)(client);
 }
