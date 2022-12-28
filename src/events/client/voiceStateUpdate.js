@@ -35,7 +35,7 @@ module.exports = {
                     if(text) {
                         if (text.includes("Remedy")) {
                            // console.log("Hey There Im Remdy");
-                            await newState.channel.send({content: text});
+                            //await newState.channel.send({content: text});
                             await client.emit('onVicBotVoice', newState.channel, text, client);
                           }
                     }
