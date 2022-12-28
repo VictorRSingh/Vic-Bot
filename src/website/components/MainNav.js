@@ -3,6 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function BasicExample() {
   const router = useRouter();
