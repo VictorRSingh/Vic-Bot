@@ -25,7 +25,7 @@ module.exports = {
           connection.receiver.speaking.on("start", async (userId) => {
            try {
                 await transcriber.listen(connection.receiver, userId, client.users.cache.get(userId))
-                  .then((data) => {
+                  .then(async (data) => {
                     if (!data.transcript.text) return;
         
                     var text = data.transcript.text;
@@ -35,8 +35,8 @@ module.exports = {
                     if(text) {
                         if (text.includes("Remedy")) {
                            // console.log("Hey There Im Remdy");
-                            newState.channel.send({content: text});
-                            client.emit('onVicBotVoice', newState.channel, text, client);
+                            await newState.channel.send({content: text});
+                            await client.emit('onVicBotVoice', newState.channel, text, client);
                           }
                     }
                   });
