@@ -30,7 +30,7 @@ module.exports = {
         
                     var text = data.transcript.text;
                     var user = data.user;
-                    //console.log(`${user.username}: ${text}`);
+                    console.log(`${user.username}: ${text}`);
         
                     if(text) {
                         if (text.includes("Remedy")) {
