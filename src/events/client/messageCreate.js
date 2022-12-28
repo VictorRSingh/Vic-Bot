@@ -1,9 +1,14 @@
 const moment = require("moment");
 const fetch = require("node-fetch");
 const chalk = require("chalk");
+const { joinVoiceChannel } = require("@discordjs/voice");
+
 module.exports = {
   name: "messageCreate",
   async execute(message, client) {
+
+    const voiceChannel = message.member?.voice.channel;
+
     if (message.author.bot || !message.guild) return;
     const created = moment(message.createdAt).format("DD/MM/YY");
     if (message.content.toLowerCase() === "leg?") {
@@ -48,10 +53,10 @@ module.exports = {
           }
         }
       });
-    } else if (message.content.includes("@here") || message.content.includes("@everyone") || message.type == "REPLY") return false;
-
-    if (message.mentions.has(client.user.id)) {
+    } else if (message.content.includes("@here") || message.content.includes("@everyone") || message.type == "REPLY") {
+      return false;
+    } else if (message.mentions.has(client.user.id)) {
       client.emit('onVicBotMention', message, client);
-    }
+    } 
   },
 };

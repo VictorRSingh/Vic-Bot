@@ -13,6 +13,7 @@
     "child_process": "^1.0.2",
     "deepai": "^1.0.21",
     "discord-api-types": "^0.37.14",
+    "discord-speech-to-text": "^1.1.5",
     "discord.js": "^14.6.1-dev.1666613093-68d5712.0",
     "distube": "^4.0.4",
     "dotenv": "^16.0.3",

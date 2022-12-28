@@ -13,7 +13,6 @@ module.exports = {
     console.log(
       chalk.green(`\nReady ` + chalk.blue(bot) + ` is logged in and online.`)
     );
-
   },
 };
 
