@@ -17,6 +17,7 @@ const { DisTube } = require('distube');
 const fs = require('fs');
 const { Guilds, GuildMessages, MessageContent, GuildVoiceStates, GuildMembers, } = GatewayIntentBits;
 const client = new Client({ intents: [Guilds, GuildMessages, MessageContent, GuildVoiceStates, GuildMembers] });
+
 const chalk = require('chalk');
 
 module.exports = client;
@@ -65,7 +66,6 @@ for(const folder of functionFolder)
 client.handleEvents();
 client.handleCommands();
 client.handleComponents();
-
 
 client.login(token);
 
