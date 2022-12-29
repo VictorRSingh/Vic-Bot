@@ -1,0 +1,11 @@
+#brand {
+    color: rgb(29, 47, 81);
+    font-family: monospace;
+    font-style: oblique;
+}
+
+.body-container.container {
+    background-color:rgba(68, 55, 87, 0.428);
+    width: 80%;
+    height: 100vh;
+}

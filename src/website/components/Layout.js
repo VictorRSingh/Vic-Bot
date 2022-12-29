@@ -5,8 +5,7 @@ export default function Layout(props) {
     return (
       <>
       <MainNav />
-      <br />
-      <Container>{props.children}</Container>
+      <Container className="body-container">{props.children}</Container>
       <br />
       </>
     );
