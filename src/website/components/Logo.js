@@ -4,7 +4,10 @@ export default function Logo(props) {
     return (<>
         <Row>
             <Col>
-                <img className='mx-auto d-block' src="/images/logo.png"/>
+                <img 
+                className='mx-auto d-block' src="/images/logo.png"
+                width="100%"
+                />
             </Col>
         </Row>
     </>)
