@@ -4,10 +4,10 @@ import Link from "next/link";
 
 function BasicExample() {
   const router = useRouter();
-  console.log(__dirname);
+
   return (
     <>
-      <Navbar variant="dark" expand="lg">
+      <Navbar variant="dark" expand="md">
         <Container>
           <Navbar.Brand href="#home"><span className="first-name">Victor</span> <span className="last-name">Singh</span></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
