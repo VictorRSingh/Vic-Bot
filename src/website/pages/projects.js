@@ -1,7 +1,11 @@
+import { Container, Row, Col } from "react-bootstrap"
+
 export default function Projects(props) {
-    return(
-        <>
-            Projects will be listen here in the future.
-        </>
-    )
+    return(<>
+        <Container className="projects">
+          <Row className="justify-content-center">
+           Projects
+          </Row>
+        </Container>
+      </>)
 }

@@ -1,27 +1,18 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import { Container, Row, Col, Nav, Navbar, Toggle } from "react-bootstrap";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-
 function BasicExample() {
   const router = useRouter();
-console.log(__dirname);
+  console.log(__dirname);
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand>
-            <img 
-            src="/images/brand.png"
-            width={128}
-            height={64}
-            /></Navbar.Brand>
+          <Navbar.Brand href="#home"><span className="first-name">Victor</span> <span className="last-name">Singh</span></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+          <Navbar.Collapse>
+            <Nav className="justify-content-end" style={{ width: "100%" }}>
               <Link href="/" passHref legacyBehavior>
                 <Nav.Link active={router.pathname === "/"}>Home</Nav.Link>
               </Link>
@@ -31,14 +22,13 @@ console.log(__dirname);
                 </Nav.Link>
               </Link>
               <Link href="/resume" passHref legacyBehavior>
-                <Nav.Link active={router.pathname === "/resume"}>
-                  Resume
-                </Nav.Link>
+                <Nav.Link active={router.pathname === "/resume"}>Interactive Resume</Nav.Link>
               </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <br />
     </>
   );
 }

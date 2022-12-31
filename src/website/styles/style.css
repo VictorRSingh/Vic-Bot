@@ -1,14 +1,26 @@
-#brand {
-    color: rgb(29, 47, 81);
-    font-family: monospace;
-    font-style: oblique;
+a.navbar-brand {
+    padding-left: 2rem;
+    font-size: 30px;
 }
 
-body {
-    background-color:rgb(26, 21, 33);
+.navbar {
+    margin: 30px;
+    padding: 5px;
 }
-.body-container.container {
-    width: 40%;
-    height: 90vh;
-    text-align: center;
+
+.first-name{
+    color:aquamarine;
+}
+
+.nav-link{
+    color: whitesmoke !important;
+    font-size: 20px;
+  }
+
+.nav-link.active {
+    color: aquamarine !important;
+}
+
+.homepage {
+    font-size: 20px;
 }
