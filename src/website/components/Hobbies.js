@@ -7,6 +7,7 @@ export default function Hobbies(props) {
         <Container>
           <Row>
             <Col>
+            <br/>
               <h4>Hobbies & Interests:</h4>
                 I enjoy playing video games with my friends in my spare time.
                 <br />
@@ -38,6 +39,7 @@ export default function Hobbies(props) {
                       Valheim
                     </a>
                   </li>
+                  <br/>
                 I have also taken interest in coding a Discord Bot using{" "}
                 <a
                   href="https://discord.js.org/#/"
