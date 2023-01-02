@@ -1,16 +1,11 @@
+import Navbar from "../components/Navbar";
 import "../styles/globals.css";
-import "../styles/bootstrap.min.css";
-import "../styles/style.css";
-import Layout from '../components/Layout'
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
-  );
+  return (<>
+    <Navbar />
+    <Component {...pageProps} />
+  </>);
 }
 
-export default MyApp
+export default MyApp;
