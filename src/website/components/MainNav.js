@@ -21,19 +21,19 @@ export default function MainNav(props) {
             </div>
           </Link>
           <ul className="hidden sm:flex">
-            <li className="p-4">
+            <li className={`p-4 ${router.pathname == '/' ? 'text-blue-500 border-b-4 border-blue-700' : "hover:text-blue-600"}`}>
               <Link href="/">Home</Link>
             </li>
-            <li className="p-4">
+            <li className={`p-4 ${router.pathname == '/about' ? 'text-blue-500 border-b-4 border-blue-700' : "hover:text-blue-600"}`}>
               <Link href="/about">About</Link>
             </li>
-            <li className="p-4">
+            <li className={`p-4 ${router.pathname == '/projects' ? 'text-blue-500 border-b-4 border-blue-700' : "hover:text-blue-600"}`}>
               <Link href="/projects">Projects</Link>
             </li>
-            <li className="p-4">
+            <li className={`p-4 ${router.pathname == '/resume' ? 'text-blue-500 border-b-4 border-blue-700' : "hover:text-blue-600"}`}>
               <Link href="/resume">Resume</Link>
             </li>
-            <li className="p-4">
+            <li className={`p-4 ${router.pathname == '/contact' ? 'text-blue-500 border-b-4 border-blue-700' : "hover:text-blue-600"}`}>
               <Link href="/contact">Contact</Link>
             </li>
           </ul>
@@ -56,19 +56,19 @@ export default function MainNav(props) {
             }
           >
             <ul>
-              <li onClick={handleNav} className={`p-4 text-3xl hover:text-blue-400 ${router.pathname == '/' ? 'text-blue-700' : ""}`}>
+              <li onClick={handleNav} className={`p-4 text-3xl ${router.pathname == '/' ? 'text-blue-500' : "hover:text-blue-600"}`}>
                 <Link href="/">Home</Link>
               </li>
-              <li onClick={handleNav} className={`p-4 text-3xl hover:text-blue-400 ${router.pathname == '/about' ? 'text-blue-700' : ""}`}>
+              <li onClick={handleNav} className={`p-4 text-3xl ${router.pathname == '/about' ? 'text-blue-500' : "hover:text-blue-600"}`}>
                 <Link href="/about">About</Link>
               </li>
-              <li onClick={handleNav} className={`p-4 text-3xl hover:text-blue-400 ${router.pathname == '/projects' ? 'text-blue-700' : ""}`}>
+              <li onClick={handleNav} className={`p-4 text-3xl ${router.pathname == '/projects' ? 'text-blue-500' : "hover:text-blue-600"}`}>
                 <Link href="/projects">Projects</Link>
               </li>
-              <li onClick={handleNav} className={`p-4 text-3xl hover:text-blue-400 ${router.pathname == '/resume' ? 'text-blue-700' : ""}`}>
+              <li onClick={handleNav} className={`p-4 text-3xl ${router.pathname == '/resume' ? 'text-blue-500' : "hover:text-blue-600"}`}>
                 <Link href="/resume">Resume</Link>
               </li>
-              <li onClick={handleNav} className={`p-4 text-3xl hover:text-blue-400 ${router.pathname == '/contact' ? 'text-blue-700' : ""}`}>
+              <li onClick={handleNav} className={`p-4 text-3xl ${router.pathname == '/contact' ? 'text-blue-500' : "hover:text-blue-600"}`}>
                 <Link href="/contact">Contact</Link>
               </li>
             </ul>
