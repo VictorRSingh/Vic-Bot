@@ -7,17 +7,3 @@ html {
   height: 90vh;
   width: 100vw;
 }
-
-.custom-img {
-  background-image: url('../public/images/Hexagon.svg');
-}
-
-ul li:hover {
-  color: darkcyan;
- }
- 
- .active {
-  color: cyan;
-  border-color: royalblue;
-  border-width: 0 0 4px 0;
- }
