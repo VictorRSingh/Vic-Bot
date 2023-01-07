@@ -4,8 +4,9 @@
 
 html {
   scroll-behavior: smooth;
-  height: 90vh;
+  height: 100%;
   width: 100vw;
+  overflow: hidden;
 }
 
 .custom-img {
