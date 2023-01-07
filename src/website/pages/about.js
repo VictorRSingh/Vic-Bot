@@ -1,5 +1,5 @@
-import Head from 'next/head';
-import Hero from "../components/Hero"
+import Head from "next/head";
+import Hero from "../components/Hero";
 
 export default function About(props) {
   return (
@@ -13,10 +13,27 @@ export default function About(props) {
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Hero
-          heading="Thank you for your interest!"
-          message="Below you can learn about me and why I am interested in programming."
-        />
+
+        <div className="flex items-center h-screen">
+          <div className="absolute top-0 left-0 bottom-0 right-0 bg-black/70 z-[2]" />
+          <div className="p-5 text-white z-[2] mt-[-5rem]">
+            <div>
+              <h2 className="text-4xl font-bold text-blue-500 p-4">About Me</h2>
+              <p className="p-4 text-xl flex justify-center">
+                In my early 20's I got fairly invested into Graphic Design and
+                3D modelling but wanted to go further than just creating digital
+                images and 3D models.
+              </p>
+              <p className="p-4 text-xl flex justify-center">
+                I has always been a dream to be able to create programs and
+                learn how to be a programmer. During the pandemic I took it upon
+                myself to enroll into Seneca College for Computer Programming &
+                Analysis so that I can aquire the tools and knowledge to become
+                a programmer and create applications to benefit daily life.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
