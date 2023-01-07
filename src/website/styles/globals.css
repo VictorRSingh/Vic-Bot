@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
-  height: 100%;
-  width: 100vw;
-}
-
-body {
-  overflow: hidden;
+  display: flex;
+  height: 100vh;
+  background-color: black;
+  background-image: url('../public/images/background.svg');
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .custom-img {
