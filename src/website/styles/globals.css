@@ -7,3 +7,9 @@ html {
   height: 90vh;
   width: 100vw;
 }
+
+.custom-img {
+  background-image: url('../public/images/background.svg');
+  background-repeat: none;
+  background-size: cover;
+}
