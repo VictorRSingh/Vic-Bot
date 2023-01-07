@@ -12,7 +12,6 @@ export default function Home() {
       </Head>
       <Hero heading="Welcome to my website!" message="The website is still under construction." button="Learn More"/>      
     </div>
-
     </>
   );
 }

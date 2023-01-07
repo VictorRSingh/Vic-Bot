@@ -16,7 +16,7 @@ export default function MainNav(props) {
       <div className="flex w-screen justify-between items-center p-4 grow text-white">
         <Link href="/">
           <h2 className="text-3xl">
-            <span className="text-blue-500">Victor</span> <span className="text-black">Singh</span>
+            <span className="text-blue-500 font-bold">Victor</span> <span className="text-black font-semibold">Singh</span>
           </h2>
         </Link>
         <div className="hidden sm:flex">
