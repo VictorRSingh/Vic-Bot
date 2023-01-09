@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 export default function MainNav(props) {
   const router = useRouter();
-
   const [toggled, setToggled] = useState(false);
 
   const handleNav = () => {
@@ -13,64 +12,15 @@ export default function MainNav(props) {
 
   return (
     <>
-      <div className="flex w-screen justify-between items-center p-4 grow text-white">
-        <Link href="/">
-          <h2 className="text-3xl">
-            <span className="text-blue-500 font-bold">Victor</span> <span className="text-black font-semibold">Singh</span>
-          </h2>
-        </Link>
-        <div className="hidden sm:flex">
-          <ul className="sm:flex">
-            <li
-              className={`p-4 ${
-                router.pathname == "/"
-                  ? "text-blue-500 border-b-4 border-blue-800"
-                  : "hover:text-blue-300"
-              }`}
-            >
-              <Link href="/">Home</Link>
-            </li>
-            <li
-              className={`p-4 ${
-                router.pathname == "/about"
-                  ? "text-blue-500 border-b-4 border-blue-800"
-                  : "hover:text-blue-300"
-              }`}
-            >
-              <Link href="/about">About</Link>
-            </li>
-            <li
-              className={`p-4 ${
-                router.pathname == "/projects"
-                  ? "text-blue-500 border-b-4 border-blue-800"
-                  : "hover:text-blue-300"
-              }`}
-            >
-              <Link href="/projects">Projects</Link>
-            </li>
-            <li
-              className={`p-4 ${
-                router.pathname == "/resume"
-                  ? "text-blue-500 border-b-4 border-blue-800"
-                  : "hover:text-blue-300"
-              }`}
-            >
-              <Link href="/resume">Resume</Link>
-            </li>
-            <li
-              className={`p-4 ${
-                router.pathname == "/contact"
-                  ? "text-blue-500 border-b-4 border-blue-800"
-                  : "hover:text-blue-300"
-              }`}
-            >
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </div>
-
+      <div className="grid grid-cols-3 gap-4 items-center rounded-br-full rounded-tr-full border-b-2 border-r-2 border-neutral-500 shadow-neutral-600 shadow-md">
+        <span className="text-3xl col-span-2 p-4">
+          <span className="text-blue-500 font-bold">Victor</span> <span className="font-semibold">Singh</span>
+        </span>
         {/* Mobile Button */}
-        <div onClick={handleNav} className="block sm:hidden z-10">
+        <span
+          onClick={handleNav}
+          className="col-span-1 sm:hidden z-10 flex justify-end p-4"
+        >
           {toggled ? (
             <AiOutlineClose
               size={20}
@@ -79,7 +29,7 @@ export default function MainNav(props) {
           ) : (
             <AiOutlineMenu size={20} className="animate-pulse text-blue-500" />
           )}
-        </div>
+        </span>
         {/* Mobile Menu */}
         <div
           className={
@@ -88,7 +38,7 @@ export default function MainNav(props) {
               : "sm:hidden absolute top-0 left-[-100%] bottom-0 right-0 flex justify-center items-center w-full h-screen bg-neutral-800 text-center ease-in duration-300"
           }
         >
-          <ul>
+          <ul className="text-white font-semibold">
             <li
               onClick={handleNav}
               className={`p-4 text-3xl hover:text-blue-400 ${
