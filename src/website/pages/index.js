@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <div className="grid grid-cols-1 items-center">
-        <div className="mt-48">
+        <div className="mt-40">
           <Hero
             heading={"Welcome to my website"}
             message={"The website is still under development"}

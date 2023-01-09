@@ -12,10 +12,61 @@ export default function MainNav(props) {
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-4 items-center rounded-br-full rounded-tr-full border-b-2 border-r-2 border-neutral-500 shadow-neutral-600 shadow-md">
-        <span className="text-3xl col-span-2 p-4">
+      <div className="grid mx-2 grid-cols-3 sm:grid-cols-2 gap-4 items-center border-b-2 border-neutral-400 border-transparent shadow-2xl shadow-neutral-600">
+        <span className="text-3xl col-span-2 sm:col-span-1 p-4">
           <span className="text-blue-500 font-bold">Victor</span> <span className="font-semibold">Singh</span>
         </span>
+        <div className="hidden sm:grid sm:col-span-1 sm:justify-center">
+          <ul className="sm:flex text-white">
+            <li
+              className={`p-4 ${
+                router.pathname == "/"
+                  ? "text-blue-500 border-b-4 border-blue-800"
+                  : "hover:text-blue-300"
+              }`}
+            >
+              <Link href="/">Home</Link>
+            </li>
+            <li
+              className={`p-4 ${
+                router.pathname == "/about"
+                  ? "text-blue-500 border-b-4 border-blue-800"
+                  : "hover:text-blue-300"
+              }`}
+            >
+              <Link href="/about">About</Link>
+            </li>
+            <li
+              className={`p-4 ${
+                router.pathname == "/projects"
+                  ? "text-blue-500 border-b-4 border-blue-800"
+                  : "hover:text-blue-300"
+              }`}
+            >
+              <Link href="/projects">Projects</Link>
+            </li>
+            <li
+              className={`p-4 ${
+                router.pathname == "/resume"
+                  ? "text-blue-500 border-b-4 border-blue-800"
+                  : "hover:text-blue-300"
+              }`}
+            >
+              <Link href="/resume">Resume</Link>
+            </li>
+            <li
+              className={`p-4 ${
+                router.pathname == "/contact"
+                  ? "text-blue-500 border-b-4 border-blue-800"
+                  : "hover:text-blue-300"
+              }`}
+            >
+              <Link href="/contact">Contact</Link>
+            </li>
+          </ul>
+        </div>
+
+        
         {/* Mobile Button */}
         <span
           onClick={handleNav}
