@@ -13,9 +13,9 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex px-8">
+      {/* `    <div className="flex px-8">
           <Button text="Learn More"/>
-        </div>
+        </div>` */}
     </>
   );
 }
