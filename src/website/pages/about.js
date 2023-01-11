@@ -5,24 +5,28 @@ export default function About(props) {
 
   return (
     <>
-      <div className="h-5/6 flex items-center justify-center p-4">
-        <div className="grid grid-cols-2 gap-y-16">
-          <div className="col-span-1 text-left flex items-center">
-            <h1 className="text-blue-500 font-semibold text-5xl">About Me</h1>
-          </div>
-          <div className=" col-span-1 text-center">
-            <p className="text-white text-xl">
-              I am currently a student currently enrolled at Seneca College
-            </p>
-          </div>
-          <div className="border-2 rounded-xl col-span-2 bg-blue-500 p-4">
-            <h1 className="text-white text-2xl">Why Programming?</h1>
-            <p className="text-black font-semibold p-4">
-              I chose to go into programming because I have always admired the
-              idea of being able to create any program that can do anything y              wanted.
-            </p>
-          </div>
-        </div>
+      <div className="grid grid-cols-2 grid-flow-row-dense gap-5 p-4 mt-[3rem]">
+        <h1 className="flex flex-wrap col-span-2 text-blue-500 text-3xl font-semibold">
+          About Me
+        </h1>
+        <p className="col-span-1 flex flex-wrap bg-neutral-800 text-white rounded-xl justify-center text-center shadow-white shadow-inner p-2 items-center">
+          Currently enrolled at Seneca College for Computer Programming &
+          Analysis
+        </p>
+        <p className="col-span-1 flex flex-wrap bg-neutral-800 text-white rounded-xl justify-center text-center shadow-white shadow-inner p-2 items-center">
+          Retail experience at a management level
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 grid-flow-row-dense gap-5 p-4">
+        <h1 className="flex flex-wrap col-span-2 text-blue-500 text-3xl font-semibold justify-end text-center">
+          My Hobbies
+        </h1>
+        <p className="col-span-2 flex flex-wrap bg-neutral-800 text-white rounded-xl text-center shadow-white shadow-inner p-2 items-center">
+          I enjoy playing video games and going to the movies. I also enjoy
+          learning new programming languages. Recently I got more involved into
+          JavaScript creating a Discord bot the use of DiscordJS.
+        </p>
       </div>
     </>
   );

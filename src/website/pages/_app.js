@@ -8,8 +8,11 @@ function MyApp({ Component, pageProps }) {
         <div class="py-4">
           <MainNav />
         </div>
-        <div class="flex flex-grow justify-center">
+        {/* <div class="flex flex-grow justify-center">
           <Component {...pageProps} />
+        </div> */}
+        <div className="grid grid-flow-row-dense">
+        <Component {...pageProps} />
         </div>
       </div>
     </>

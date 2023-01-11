@@ -14,15 +14,15 @@ export default function MainNav(props) {
     <>
       <div className="grid mx-2 grid-cols-3 sm:grid-cols-2 gap-4 items-center">
         <span className="text-3xl col-span-2 sm:col-span-1 p-4">
-          <span className="text-blue-500 font-bold">Victor</span> <span className="text-white font-semibold">Singh</span>
+          <span className="text-blue-500 font-bold ">Victor</span> <span className="text-white font-semibold">Singh</span>
         </span>
         <div className="hidden sm:grid sm:col-span-1 sm:justify-center">
-          <ul className="sm:flex text-white">
+          <ul className="sm:flex">
             <li
               className={`p-4 ${
                 router.pathname == "/"
                   ? "text-blue-500 border-b-4 border-blue-800"
-                  : "hover:text-blue-300"
+                  : "hover:text-blue-300 text-green-500"
               }`}
             >
               <Link href="/">Home</Link>
@@ -31,7 +31,7 @@ export default function MainNav(props) {
               className={`p-4 ${
                 router.pathname == "/about"
                   ? "text-blue-500 border-b-4 border-blue-800"
-                  : "hover:text-blue-300"
+                  : "hover:text-blue-300 text-green-500"
               }`}
             >
               <Link href="/about">About</Link>
@@ -40,7 +40,7 @@ export default function MainNav(props) {
               className={`p-4 ${
                 router.pathname == "/projects"
                   ? "text-blue-500 border-b-4 border-blue-800"
-                  : "hover:text-blue-300"
+                  : "hover:text-blue-300 text-red-500"
               }`}
             >
               <Link href="/projects">Projects</Link>
@@ -49,7 +49,7 @@ export default function MainNav(props) {
               className={`p-4 ${
                 router.pathname == "/resume"
                   ? "text-blue-500 border-b-4 border-blue-800"
-                  : "hover:text-blue-300"
+                  : "hover:text-blue-300 text-red-500"
               }`}
             >
               <Link href="/resume">Resume</Link>
@@ -58,7 +58,7 @@ export default function MainNav(props) {
               className={`p-4 ${
                 router.pathname == "/contact"
                   ? "text-blue-500 border-b-4 border-blue-800"
-                  : "hover:text-blue-300"
+                  : "hover:text-blue-300 text-red-500"
               }`}
             >
               <Link href="/contact">Contact</Link>
@@ -89,10 +89,10 @@ export default function MainNav(props) {
               : "sm:hidden absolute top-0 left-[-100%] bottom-0 right-0 flex justify-center items-center w-full h-screen bg-neutral-800 text-center ease-in duration-300"
           }
         >
-          <ul className="text-white font-semibold">
+          <ul className="font-semibold">
             <li
               onClick={handleNav}
-              className={`p-4 text-3xl hover:text-blue-400 ${
+              className={`p-4 text-3xl text-green-500 hover:text-blue-400 ${
                 router.pathname == "/" ? "text-blue-700" : ""
               }`}
             >
@@ -100,7 +100,7 @@ export default function MainNav(props) {
             </li>
             <li
               onClick={handleNav}
-              className={`p-4 text-3xl hover:text-blue-400 ${
+              className={`p-4 text-3xl text-green-500 hover:text-blue-400 ${
                 router.pathname == "/about" ? "text-blue-700" : ""
               }`}
             >
@@ -108,7 +108,7 @@ export default function MainNav(props) {
             </li>
             <li
               onClick={handleNav}
-              className={`p-4 text-3xl hover:text-blue-400 ${
+              className={`p-4 text-3xl text-red-500 hover:text-blue-400 ${
                 router.pathname == "/projects" ? "text-blue-700" : ""
               }`}
             >
@@ -116,7 +116,7 @@ export default function MainNav(props) {
             </li>
             <li
               onClick={handleNav}
-              className={`p-4 text-3xl hover:text-blue-400 ${
+              className={`p-4 text-3xl text-red-500 hover:text-blue-400 ${
                 router.pathname == "/resume" ? "text-blue-700" : ""
               }`}
             >
@@ -124,7 +124,7 @@ export default function MainNav(props) {
             </li>
             <li
               onClick={handleNav}
-              className={`p-4 text-3xl hover:text-blue-400 ${
+              className={`p-4 text-3xl text-red-500 hover:text-blue-400 ${
                 router.pathname == "/contact" ? "text-blue-700" : ""
               }`}
             >
