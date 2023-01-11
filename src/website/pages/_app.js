@@ -4,9 +4,13 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <div className="w-screen h-screen bg-black/70 bg-cover bg-fixed">
-        <MainNav />
-        <Component {...pageProps} />
+      <div class="flex flex-col h-screen">
+        <div class="py-4">
+          <MainNav />
+        </div>
+        <div class="flex flex-grow justify-center">
+          <Component {...pageProps} />
+        </div>
       </div>
     </>
   );

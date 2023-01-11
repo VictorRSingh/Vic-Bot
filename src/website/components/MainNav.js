@@ -12,9 +12,9 @@ export default function MainNav(props) {
 
   return (
     <>
-      <div className="grid mx-2 grid-cols-3 sm:grid-cols-2 gap-4 items-center border-b-2 border-neutral-400 border-transparent shadow-2xl shadow-neutral-600">
+      <div className="grid mx-2 grid-cols-3 sm:grid-cols-2 gap-4 items-center">
         <span className="text-3xl col-span-2 sm:col-span-1 p-4">
-          <span className="text-blue-500 font-bold">Victor</span> <span className="font-semibold">Singh</span>
+          <span className="text-blue-500 font-bold">Victor</span> <span className="text-white font-semibold">Singh</span>
         </span>
         <div className="hidden sm:grid sm:col-span-1 sm:justify-center">
           <ul className="sm:flex text-white">
