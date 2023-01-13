@@ -11,10 +11,10 @@ export default function Hero({
 
   return (
     <>
-      <div className={`grid grid-cols-1 px-4 m-4`}>
-        <h1 className={`text-4xl py-4 font-semibold ${headingColor}`}>{heading}</h1>
-        <p className={`text-xl py-4 ${messageColor}`}>{message}</p>
-      </div>
+    <div className={`flex justify-center flex-wrap h-full gap-4 ${backgroundColor}`}>
+      <h1 className={`flex items-end text-4xl font-semibold flex-grow ${headingColor}`}>{heading}</h1>
+      <p className={`${messageColor} flex items-start flex-grow`}>{message}</p>
+    </div>
     </>
   );
 }

@@ -4,15 +4,12 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <div class="flex flex-col h-screen">
-        <div class="py-4">
+      <div className="flex flex-col w-full h-screen">
+        <div className=" p-4">
           <MainNav />
         </div>
-        {/* <div class="flex flex-grow justify-center">
+        <div className="flex flex-grow p-4 justify-center">
           <Component {...pageProps} />
-        </div> */}
-        <div className="grid grid-flow-row-dense">
-        <Component {...pageProps} />
         </div>
       </div>
     </>
@@ -20,3 +17,5 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+
+//                   <Component {...pageProps} />

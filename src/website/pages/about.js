@@ -1,32 +1,80 @@
 import { useRouter } from "next/router";
+import Hero from "../components/Hero";
+import Image from "next/image";
 
 export default function About(props) {
   const router = useRouter();
 
+  const profSkills = [
+    "JavaScript",
+    "React.js/Next.js",
+    "Node.js",
+    "C++",
+    "Python",
+    "TailwindCSS",
+    "Bootstrap 5",
+    "Data Structures",
+    "Algorithms",
+    "RestAPI",
+    "PL/SQL",
+    "UNIX",
+    "Java",
+    "Database Administration",
+  ];
+
+  const profSpans = profSkills.map((skill) => {
+    return (
+      <>
+        <span key="{skill}">{`| ${skill} `}</span>
+      </>
+    );
+  });
+
+  const softSkills = [
+    "Leadership",
+    "Collaboration",
+    "Time Management",
+    "Problem Solving",
+    "Organization",
+    "Adaptability",
+    "Interpersonal Communication",
+  ];
+
+  const softSpans = softSkills.map((skill) => {
+    return (
+      <>
+        <span key="{skill}">{`| ${skill} `}</span>
+      </>
+    );
+  });
+
   return (
     <>
-      <div className="grid grid-cols-2 grid-flow-row-dense gap-5 p-4 mt-[3rem]">
-        <h1 className="flex flex-wrap col-span-2 text-blue-500 text-3xl font-semibold">
-          About Me
-        </h1>
-        <p className="col-span-1 flex flex-wrap bg-neutral-800 text-white rounded-xl justify-center text-center shadow-white shadow-inner p-2 items-center">
-          Currently enrolled at Seneca College for Computer Programming &
-          Analysis
-        </p>
-        <p className="col-span-1 flex flex-wrap bg-neutral-800 text-white rounded-xl justify-center text-center shadow-white shadow-inner p-2 items-center">
-          Retail experience at a management level
-        </p>
-      </div>
+      <div className="grid grid-cols-1 w-full p-4 gap-3">
+        <div className="flex justify-center col-span-1">
+          <div className="border-2 border-neutral-700 rounded-full me h-52 w-52"></div>
+        </div>
 
-      <div className="grid grid-cols-2 grid-flow-row-dense gap-5 p-4">
-        <h1 className="flex flex-wrap col-span-2 text-blue-500 text-3xl font-semibold justify-end text-center">
-          My Hobbies
-        </h1>
-        <p className="col-span-2 flex flex-wrap bg-neutral-800 text-white rounded-xl text-center shadow-white shadow-inner p-2 items-center">
-          I enjoy playing video games and going to the movies. I also enjoy
-          learning new programming languages. Recently I got more involved into
-          JavaScript creating a Discord bot the use of DiscordJS.
-        </p>
+          <span className="col-span-1 text-blue-500 font-semi-bold text-xl text-center flex justify-center items-center">
+            About Me
+          </span>
+          <div className="text-white text-center text-lg rounded-xl border-2 border-neutral-700 bg-neutral-900 p-4 col-span-1">
+            I am currently in my 4th semester of <a className="text-blue-500 underline" href="https://www.senecacollege.ca/programs/fulltime/CPA.html">Computer Programming & Analysis</a> @ <a className="text-blue-500 underline" href= "https://www.senecacollege.ca/home.html" >Seneca College</a>. In my spare time I enjoy practicing code with various little projects suchs as making websites or working on my Discord bot.
+          </div>
+
+        <span className="col-span-1 text-blue-500 font-semi-bold text-xl text-center flex justify-center items-center">
+          Professional Skills
+        </span>
+        <div className="text-white text-center text-lg rounded-xl border-2 border-neutral-700 bg-neutral-900 p-4 col-span-1">
+          {profSpans} |
+        </div>
+
+        <span className="col-span-1 text-blue-500 font-semi-bold text-xl text-center flex justify-center items-center">
+          Soft Skills
+        </span>
+        <div className="text-white text-center text-lg rounded-xl border-2 border-neutral-700 bg-neutral-900 p-4 col-span-1">
+          {softSpans} |
+        </div>
       </div>
     </>
   );

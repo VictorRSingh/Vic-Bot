@@ -1,5 +1,9 @@
+import ProjectCard from "../components/ProjectCard";
+
 export default function Projects(props) {
     return (<>
-        Projects
+        <div className="flex">
+            Test
+        </div>
     </>);
 }

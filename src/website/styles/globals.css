@@ -10,3 +10,8 @@ html {
 body {
   background-color: rgb(12, 12, 12);
 }
+
+.me {
+  background-image: url('../public/images/me.png');
+  background-size: cover;
+}
