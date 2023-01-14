@@ -27,7 +27,7 @@ module.exports = {
         
         for(const birthday in birthdays) {
             const channel = client.channels.cache.get('1033239111412219946');
-            cron.schedule(`59 59 23 ${birthdays[birthday].day} ${birthdays[birthday].month} *`, () => {
+            cron.schedule(`0 0 0 ${birthdays[birthday].day} ${birthdays[birthday].month} *`, () => {
                 channel.send(`Happy birthday ${birthdays[birthday].name}`);
             }, {
                 scheduled: true, 
