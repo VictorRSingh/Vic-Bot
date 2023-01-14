@@ -60,8 +60,9 @@ module.exports = {
                   text,
                   client
                 );
-              } else if(text.toLowerCase() === "remedy leave") {
-                connection.destroy();
+                if(text.toLowerCase() === "remedy leave") {
+                    connection.destroy();
+                  }
               }
             }
           });
