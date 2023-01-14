@@ -4,7 +4,7 @@ const {
   VoiceConnectionStatus,
 } = require("@discordjs/voice");
 const Transcriber = require("discord-speech-to-text");
-const transcriber = new Transcriber("NIP2FPLVXCH4TEM7HV6A3AX3OLCOUDPN");
+const transcriber = new Transcriber("7KLMXJW3ULAGLMIDGYN6LQWV7HR67ME5");
 const chalk = require("chalk");
 
 module.exports = {
@@ -12,7 +12,6 @@ module.exports = {
   once: true,
   connection: null,
   async execute(oldState, newState, client) {
-    console.log(chalk.yellow(`Executing event '${this.name}'`));
-    console.log(chalk.green(`Event '${this.name}' executed successfully`));
+
   },
 };
