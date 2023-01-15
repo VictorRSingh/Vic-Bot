@@ -16,14 +16,19 @@ module.exports = (client) => {
             {
                 const event = require(`../../events/${folder}/${file}`);
                 if(event.once) 
-                client.once(event.name, (...args) => 
-                event.execute(...args, client)
+                client.once(event.name, (...args) => { 
+                    event.execute(...args, client)
+                }
                 );
 
                 else
-                client.on(event.name, (...args) => 
-                event.execute(...args, client)
-                );
+                client.on(event.name, (...args) => {           
+                    try {                
+                        event.execute(...args, client)
+                    } catch (error) {
+                        console.error(chalk.red(`ERROR: [${error}]`));
+                    }
+                });
             }
             break;
 
@@ -50,25 +55,19 @@ module.exports = (client) => {
                 event.execute(...args, client)
                 );
                 else 
-                client.on(event.name, (...args) => 
-                event.execute(...args, client)
-                );
+                client.on(event.name, (...args) => {                
+   
+                try {
+                        console.log(chalk.yellow(`Executing event '${event.name}'`));                     
+                        event.execute(...args, client)
+                } catch (error) {
+                    console.error(chalk.red(`ERROR: [${error}]`));
+                }
+
+                console.log(chalk.green(`Event '${event.name}' executed successfully`));
+            });
             }
             break;
-            case "games":
-                for(const file of eventFiles) 
-                {
-                    const event = require(`../../events/${folder}/${file}`);
-                    if(event.once) 
-                    connection.once(event.name, (...args) => 
-                    event.execute(...args, client)
-                    );
-                    else 
-                    client.on(event.name, (...args) => 
-                    event.execute(...args, client)
-                    );
-                }
-                break;
         default:
             break;
         }

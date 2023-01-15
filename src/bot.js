@@ -51,7 +51,7 @@ client.color = 0x18e1ee;
         console.log(`stdout: ${stdout}`);
         console.error(`stderr: ${stderr}`);
     });
-    console.log(chalk.green('API listening on port 3000'));
+    console.log(chalk.green('Website listening on port 80'));
 })();
 
 const functionFolder = fs.readdirSync('./src/functions');
