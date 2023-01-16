@@ -1,12 +1,10 @@
 const chalk = require('chalk');
-const { Colors } = require('discord.js');
 const cheerio = require('cheerio');
 const axios = require('axios');
 
 module.exports = {
     name:   'onGetWeather',
     async execute(interaction, client) {
-        console.log(chalk.yellow(`Executing event '${this.name}'`));
 
         let locations = [
             {key: 'Toronto', value:'d8ccf908e3c4c748e232720575df7cdbca6e0f1b412bca8595d8a28d0c28e8bc'},
@@ -32,7 +30,6 @@ module.exports = {
                 //console.log(res.data);
                 //load Data
                 const $ = await cheerio.load(res.data)
-                const weather = await $('.CurrentConditions--primary--2DOqs');
                 
                 const temperature = await $('.CurrentConditions--tempValue--MHmYY').html().slice(0, -1);
                 const condition = await $('.CurrentConditions--phraseValue--mZC_p').html();
@@ -59,7 +56,6 @@ module.exports = {
                 month: "long",
                 day: "numeric",
               })}:\n\n${temps}`);
-              console.log(chalk.green(`Event '${this.name}' executed successfully`));
         } catch (error) {
             console.error(chalk.red(`ERROR: [${error}]`));
         }
