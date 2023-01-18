@@ -15,3 +15,9 @@ body {
   background-image: url('../public/images/me.png');
   background-size: cover;
 }
+
+.hero-img {
+  opacity: 0.6;
+  background-image: url('../public/images/hero_background.png');
+  background-size: cover;
+}

@@ -11,10 +11,11 @@ export default function Hero({
 
   return (
     <>
-    <div className={`flex justify-center flex-wrap h-full gap-4 ${backgroundColor}`}>
-      <h1 className={`flex items-end text-4xl font-semibold flex-grow ${headingColor}`}>{heading}</h1>
-      <p className={`${messageColor} flex items-start flex-grow`}>{message}</p>
-    </div>
+      <div className="flex flex-wrap p-4 gap-4 sm:w-1/2 sm:justify-center sm:gap-8 lg:gap-12 lg:justify-center sm:text-center">
+        <h1 className={`${headingColor} text-3xl font-semibold sm:text-4xl lg:text-6xl`}>{heading}</h1>
+        <p className={`${messageColor} text-xl sm:text-2xl lg:text-2xl`}>{message}</p>
+      </div>
+      <div className="hero-img sm:h-full sm:w-1/2"></div>
     </>
   );
 }

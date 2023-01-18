@@ -4,11 +4,11 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <div className="flex flex-col w-full h-screen">
-        <div className=" p-4">
+      <div className="flex flex-col h-screen">
+        <div>
           <MainNav />
         </div>
-        <div className="flex flex-grow p-4 justify-center">
+        <div className="flex-1 h-full">
           <Component {...pageProps} />
         </div>
       </div>
